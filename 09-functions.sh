@@ -3,17 +3,18 @@
 UserId=$(id -u)
 echo "User Id is : $UserId"
 CHECK_ROOT(){
-if [ $UserId -ne 0 ]
-then
-    echo "please run this script with root privelegs"
-    exit 1
-fi
+      if [ $UserId -ne 0 ]
+      then
+         echo "please run this script with root privelegs"
+         exit 1
+    fi
 }
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
       echo "$2 is... failded"
-      exit 1
+      exit 
     else
         echo "$2 is... sucesses"
 }
