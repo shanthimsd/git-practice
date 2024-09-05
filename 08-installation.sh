@@ -11,7 +11,7 @@ fi
 
 dnf list installed git #just checking installed or not
 
-if[ $? -ne o ]
+if[ $? -ne 0 ]
 then 
     echo "Git is not installed, going to intall it.."
     dnf install git -y
