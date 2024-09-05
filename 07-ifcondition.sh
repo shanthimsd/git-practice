@@ -8,3 +8,4 @@ then
 
 else
    echo "Given number is less than 30"
+fi
