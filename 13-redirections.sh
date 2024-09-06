@@ -29,7 +29,18 @@ Validate(){
         echo -e "$2 is.. $G Sucesses $N" &>>$LOG_FILE
     fi
 }
+
+Usage(){
+    echo "Usage:: sudo sh 13-redirections.sh package1, package2..."
+    exit 1
+    }
+
 Check_Root
+
+if [ $# -eq 0 ]
+then 
+    Usage
+fi   
 
 for package in $@
 do
