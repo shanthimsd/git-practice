@@ -6,11 +6,12 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER
 
 UserId=$(id -u)
-R="\e=[31m"
-G="\e=[32m"
-N="\e=[0m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 Check_Root(){
+
     if [ $UserId -ne 0 ]
     then 
         echo -e "$R Please run the script with root priveliges $N"
