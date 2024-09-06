@@ -11,7 +11,7 @@ G="\e=[32m"
 N="\e=[0m"
 
 Check_Root(){
-    if [ $id -ne 0 ]
+    if [ $UserId -ne 0 ]
     then 
         echo -e "$R Please run the script with root priveliges $N"
         exit 1
