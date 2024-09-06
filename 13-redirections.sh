@@ -34,7 +34,7 @@ Usage(){
     echo "Usage:: sudo sh 13-redirections.sh package1, package2..."
     exit 1
     }
-
+ echo "Script started exectuting at: ($date)"
 Check_Root
 
 if [ $# -eq 0 ]
