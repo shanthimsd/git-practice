@@ -9,6 +9,7 @@ UserId=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[033m"
 
 Check_Root(){
 
@@ -32,13 +33,13 @@ Check_Root
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>>$LOG_FILE
     if [ $? -ne 0 ]
     then
-        echo "$package is not installed, going to install it.."\
-        dnf install $package -y
+        echo -e " $R $package is not installed, going to install it.." &>>$LOG_FILE
+        dnf install $package -y &>>$LOG_FILE
         Validate $? "Installing $package"
     else
-        echo "$package is already installed..nothing to do"
+        echo -e "$Y $package is already installed..nothing to do"
     fi
 done 
