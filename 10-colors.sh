@@ -20,8 +20,10 @@ VALIDATE(){
         exit 1
     else
         echo -e "$2 is... $G SUCESSES $N"
+    
     fi
 }
+
 CHECK_ROOT
 
 dnf list installed git
